@@ -38,6 +38,7 @@
 			};
 			devShells.default = craneLib.devShell {
 				checks = self.checks.${system};
+				buildInputs = with pkgs; [ rust-analyzer ];
 			};
 		});
 }
