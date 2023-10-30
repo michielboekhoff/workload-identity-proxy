@@ -1,0 +1,18 @@
+title Azure workload identity proxy
+
+actor Client application
+participant WIP
+participant Azure SQL
+Client application->WIP:Open connection
+WIP->Client application:Handshake packet
+Client application->WIP:Handshake response
+note over Client application,WIP: At this point, the client has a successful SQL connection
+WIP->Azure AD:Perform token exchange
+Azure AD->WIP:Give AAD token (is this a JWT?)
+WIP->Azure SQL:Open connection
+Azure SQL->WIP:Handshake packet
+WIP->Azure SQL: SSL Request (or is this handled by Azure?)
+==The connection is encrypted==
+WIP->Azure SQL:Handshake response with password auth
+Client application->WIP:SQL packets
+WIP->Azure SQL:Proxy all other packets
