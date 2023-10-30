@@ -8,6 +8,7 @@ edition = "2021"
 [dependencies]
 clap = { version = "4.4.7", features = ["derive"] }
 log = "0.4.20"
+nom = "7"
 rustls = "0.21.8"
 signal-hook = "0.3.17"
 structured-logger = "1.0.3"
