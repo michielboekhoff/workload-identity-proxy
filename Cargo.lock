@@ -344,6 +344,9 @@ dependencies = [
 [[package]]
 name = "protocolparser"
 version = "0.1.0"
+dependencies = [
+ "nom",
+]
 
 [[package]]
 name = "quote"
