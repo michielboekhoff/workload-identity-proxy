@@ -3,7 +3,16 @@ name = "protocolparser"
 version = "0.1.0"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[lib]
+name = "protocolparser"
+path = "src/lib.rs"
 
 [dependencies]
-nom = "7"
+color-eyre = "0.6.2"
+eyre = "0.6.10"
+winnow = "0.5.28"
+
+[dev-dependencies]
+testcontainers = "0.15.0"
+testcontainers-modules = { version = "0.2.0", features = ["mysql"] }
+
